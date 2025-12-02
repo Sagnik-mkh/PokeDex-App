@@ -28,7 +28,7 @@ function Routing() {
 	 * @returns {JSX.Element} The routing component
 	 */
 	return (
-		<div className="flex flex-col gap-20 bg-[url('../../public/pokemonBackground.jpg')] bg-cover bg-fixed bg-center h-full">
+		<div className="flex flex-col gap-20 bg-[url('../assets/images/pokemonBackground.jpg')] bg-cover bg-fixed bg-center h-full">
 			<Routes>
 				<Route path="/" element={<MainLayout />}>
 					<Route index element={<Home />} />

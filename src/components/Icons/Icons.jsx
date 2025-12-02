@@ -1,4 +1,4 @@
-import { FaGithub, FaYoutube, FaCircle } from "react-icons/fa";
+import { FaGithub, FaYoutube } from "react-icons/fa";
 import { GiPokecog } from "react-icons/gi";
 
 const icons = {

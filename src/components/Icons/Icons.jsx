@@ -1,9 +1,9 @@
-import { SiGithub, SiYoutube } from "react-icons/si";
+import { FaGithub, FaYoutube, FaCircle } from "react-icons/fa";
 import { GiPokecog } from "react-icons/gi";
 
 const icons = {
-	github: SiGithub,
-	youtube: SiYoutube,
+	github: FaGithub,
+	youtube: FaYoutube,
 	pokemon: GiPokecog, // placeholder Pokémon icon
 };
 

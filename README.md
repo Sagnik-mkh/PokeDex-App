@@ -6,7 +6,7 @@ A clean, lightweight Pokédex web application to browse, search and view detaile
 
 ## Demo
 
-> Demo: <https://pokedex-app-zeta-tan.vercel.app>
+> Demo: <https://poke-dex-app-seven.vercel.app/>
 ---
 
 ## Screenshots

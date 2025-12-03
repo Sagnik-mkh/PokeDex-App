@@ -1,7 +1,11 @@
 import React from "react";
 import EvoPokemon from "../Pokemon/EvoPokemon";
 
-export default React.memo(function PokeEvolution({ infoSuccess, infoData, evoSuccess }) {
+export default React.memo(function PokeEvolution({
+	infoSuccess,
+	infoData,
+	evoSuccess,
+}) {
 	/**
 	 * ----------------------
 	 * Render the poke evolution
@@ -12,14 +16,14 @@ export default React.memo(function PokeEvolution({ infoSuccess, infoData, evoSuc
 	 * @returns {JSX.Element} The poke evolution component
 	 */
 	return (
-		<div className="px-2 py-6 rounded-lg bg-black/65">
-			<h2 className="ml-4 mb-6 text-2xl text-white">Evolutions</h2>
-			<div className="flex">
+		<div className="container px-2 py-6 mx-auto rounded-lg max-w-2/3 bg-black/65">
+			<h2 className="mb-6 ml-4 text-2xl text-white">Evolutions</h2>
+			<div className="flex flex-col justify-center items-center xl:flex-row">
 				{infoSuccess &&
 					evoSuccess &&
 					infoData.map((pokemon, idx) => {
 						return (
-							<div className="flex justify-center items-center">
+							<div className="flex flex-col justify-around items-center basis-1/3 xl:flex-row">
 								<EvoPokemon
 									key={pokemon.name}
 									pokemonId={pokemon.id}
@@ -27,7 +31,10 @@ export default React.memo(function PokeEvolution({ infoSuccess, infoData, evoSuc
 									pokemonName={pokemon.name}
 									pokemonType={pokemon.types}
 								/>
-								<div className="mb-24 text-8xl font-medium text-white">
+								<div className="hidden mb-12 text-8xl font-medium text-white xl:block xl:mb-24">
+									{idx != infoData.length - 1 ? ">" : ""}
+								</div>
+								<div className="visible text-8xl font-medium text-white rotate-90 xl:hidden">
 									{idx != infoData.length - 1 ? ">" : ""}
 								</div>
 							</div>

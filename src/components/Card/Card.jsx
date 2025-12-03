@@ -25,7 +25,7 @@ export default React.memo(function Card({
 	return (
 		<div
 			onClick={onClickHandler}
-			className="w-2xs h-full text-black shadow-sm cursor-pointer card hover:poke-pop"
+			className="w-2xs h-full mb-6 text-black shadow-sm cursor-pointer card hover:poke-pop"
 		>
 			{/* Card image */}
 			<figure className="pt-6 bg-gray-200 rounded-md">

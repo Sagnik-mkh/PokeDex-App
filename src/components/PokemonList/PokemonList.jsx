@@ -74,7 +74,7 @@ export default React.memo(function PokemonList() {
 					goToNextUrl={goToNextUrl}
 					goToPrevUrl={goToPrevUrl}
 				/>
-				<div className="grid grid-cols-4 justify-items-center gap-12">
+				<div className="flex flex-wrap justify-items-center justify-around">
 					<PokeCards infoData={infoData} infoLoading={infoLoading} />
 				</div>
 			</div>

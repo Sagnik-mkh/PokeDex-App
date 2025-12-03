@@ -23,10 +23,10 @@ export default React.memo(function PokeDetails({
 			<h1 className="my-12 text-4xl text-center bg-base-100">
 				{Capitalize(pokeData.name)} #{pokeData.id}
 			</h1>
-			<div className="flex justify-center items-start mx-auto max-w-2/3 gap-12">
-				<div className="basis-1/2 flex flex-col gap-6">
+			<div className="flex flex-col gap-12 justify-center items-start mx-auto xl:flex-row max-w-2/3">
+				<div className="flex flex-col gap-6 w-full xl:basis-1/2">
 					<img
-						className="w-full bg-base-200 rounded-lg"
+						className="w-full rounded-lg bg-base-200"
 						src={pokeData.image2}
 						alt={pokeData.name}
 					/>

@@ -150,9 +150,7 @@ Contributions are welcome! Steps:
 ## Roadmap / Ideas
 
 - Add favorites / bookmarks
-- Add offline support with service workers
 - Add animations for sprite transitions
-- Add unit/integration tests and CI
 - Add light/dark theme
 - Filter by type (e.g., Fire, Water)
 

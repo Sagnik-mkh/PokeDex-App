@@ -25,7 +25,7 @@ export default React.memo(function AltCard({
 	return (
 		<div
 			onClick={onClickHandler}
-			className="flex flex-col justify-center items-center h-full text-black cursor-pointer w-2xs"
+			className="flex flex-col justify-center items-center h-full text-black cursor-pointer w-full"
 		>
 			{/* Card image */}
 			<figure className="flex justify-center items-center">

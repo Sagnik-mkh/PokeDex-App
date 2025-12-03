@@ -13,7 +13,7 @@ function Search() {
 				}
 				type="text"
 				placeholder="Which pokemon are you looking for?"
-				className="p-6 input input-primary w-2xl"
+				className="p-6 input input-primary sm:w-lg md:w-xl lg:w-2xl"
 			/>
 			<button
 				className="btn btn-primary"

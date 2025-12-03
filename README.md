@@ -7,22 +7,31 @@ A clean, lightweight Pokédex web application to browse, search and view detaile
 ## Demo
 
 > Demo: <https://poke-dex-app-seven.vercel.app/>
+
 ---
 
 ## Screenshots
 
-* Add screenshots in the `assets/` folder and link them here.
+### Home Page
+
+|                                            |
+| ------------------------------------------ |
+| ![Home Page](./src/assets/images/Home.png) |
+
+### Details Page
+
+|                                                  |
+| ------------------------------------------------ |
+| ![Details Page](./src/assets/images/Details.png) |
 
 ---
 
 ## Features
 
-* Browse a paginated list of Pokémon
-* Search Pokémon by name (type-ahead)
-* Filter by type (e.g., Fire, Water)
-* View detailed Pokémon pages (stats, abilities, sprites)
-* Responsive layout for mobile and desktop
-* Light/dark theme (optional)
+- Browse a paginated list of Pokémon
+- Search Pokémon by name (type-ahead)
+- View detailed Pokémon pages (stats, abilities, sprites)
+- Responsive layout for mobile and desktop
 
 ---
 
@@ -30,15 +39,15 @@ A clean, lightweight Pokédex web application to browse, search and view detaile
 
 > Replace or update these with the frameworks and tools you used.
 
-* **Framework:** React (create-react-app / Vite) / Vue / Svelte
-* **Styling:** CSS / Sass / Tailwind CSS
-* **Data source:** [PokéAPI](https://pokeapi.co/)
-* **Bundler:** Vite / webpack
-* **Hosting:** Vercel / Netlify / GitHub Pages
+- **Framework:** React (Vite)
+- **Styling:** CSS / Sass / Tailwind CSS
+- **Data source:** [PokéAPI](https://pokeapi.co/)
+- **Bundler:** Vite
+- **Hosting:** Vercel
 
 ---
 
-## Project Structure (suggested)
+## Project Structure
 
 ```lua
 PokeDex-App/
@@ -101,8 +110,8 @@ npm run dev
 
 This project uses the free [PokéAPI](https://pokeapi.co/). Example endpoints used:
 
-* `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0` — list
-* `https://pokeapi.co/api/v2/pokemon/{name or id}` — details
+- `https://pokeapi.co/api/v2/pokemon?limit=20&offset=0` — list
+- `https://pokeapi.co/api/v2/pokemon/{name or id}` — details
 
 **Notes:** Cache responses where possible. Consider server‑side pagination to reduce requests.
 
@@ -110,19 +119,9 @@ This project uses the free [PokéAPI](https://pokeapi.co/). Example endpoints us
 
 ## Performance & Accessibility
 
-* Lazy‑load images and sprites
-* Use `aria-*` attributes for screen readers
-* Ensure contrast and keyboard navigation
-
----
-
-## Tests (optional)
-
-Add tests with Jest / React Testing Library:
-
-```bash
-npm run test
-```
+- Lazy‑load images and sprites
+- Use `aria-*` attributes for screen readers
+- Ensure contrast and keyboard navigation
 
 ---
 
@@ -150,16 +149,16 @@ Contributions are welcome! Steps:
 
 ## Roadmap / Ideas
 
-* Add favorites / bookmarks
-* Add offline support with service workers
-* Add animations for sprite transitions
-* Add unit/integration tests and CI
+- Add favorites / bookmarks
+- Add offline support with service workers
+- Add animations for sprite transitions
+- Add unit/integration tests and CI
+- Add light/dark theme
+- Filter by type (e.g., Fire, Water)
 
 ---
 
 ## License
-
-Add your license here (e.g., MIT). Example:
 
 ```bash
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -169,15 +168,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy
 
 ## Contact
 
-Sagnik — [your-email@example.com](mailto:your-email@example.com)
+Sagnik — [sagnikm003@gmail.com](mailto:sagnikm003@gmail.com)
 
 ---
-
-## Customization Checklist (fill before publishing)
-
-* [ ] Add real demo URL
-* [ ] Add screenshots and GIFs
-* [ ] Update Tech Stack to match the repo
-* [ ] Fill in exact start/build commands
-* [ ] Add LICENSE file
-* [ ] Add unit tests / CI

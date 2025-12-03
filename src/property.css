@@ -1,0 +1,4 @@
+@property --radialprogress {
+	syntax: "<percentage>";
+	inherits: true;
+}

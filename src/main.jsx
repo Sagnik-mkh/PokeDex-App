@@ -1,3 +1,4 @@
+import "./property.css";
 import { StrictMode } from "react";
 import { BrowserRouter } from "react-router";
 import { createRoot } from "react-dom/client";
@@ -8,9 +9,11 @@ import App from "./App.jsx";
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
-	<BrowserRouter>
-		<QueryClientProvider client={queryClient}>
-			<App />
-		</QueryClientProvider>
-	</BrowserRouter>
+	<StrictMode>
+		<BrowserRouter>
+			<QueryClientProvider client={queryClient}>
+				<App />
+			</QueryClientProvider>
+		</BrowserRouter>
+	</StrictMode>
 );

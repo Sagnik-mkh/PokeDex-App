@@ -3,9 +3,10 @@ import usePokeShortInfo from "../../hooks/usePokeShortInfo";
 import usePokeList from "../../hooks/usePokeList";
 // import Pagination from "./Pagination";
 import PokeCards from "./PokeCards";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import PokeCardSkeleton from "../Loader/CustomListLoader";
 import Button from "../Button/Button";
+import { useApiListUrl, useAppendedList } from "../../store";
 
 export default React.memo(function PokemonList() {
 	/**
@@ -15,8 +16,8 @@ export default React.memo(function PokemonList() {
 	 * ----------------------
 	 * @returns {JSX.Element} The pokemon list component
 	 */
-	const [pokeApiUrl, setApiUrl] = useState(POKEDEX_API_BASE_URL);
-	const [list, setList] = useState([]);
+	const { pokeApiUrl, setApiUrl } = useApiListUrl();
+	const { list, setList } = useAppendedList();
 
 	// Custom hook for getting list of urls
 	const {
@@ -43,7 +44,7 @@ export default React.memo(function PokemonList() {
 
 	// Navigate to next page
 	function goToNextUrl() {
-		setList((state) => [...state, ...infoData]);
+		setList(infoData);
 		setApiUrl(listData.next ? listData.next : pokeApiUrl);
 	}
 

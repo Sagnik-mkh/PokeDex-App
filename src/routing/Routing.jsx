@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router";
 import MainLayout from "../pages/layouts/MainLayout";
 import { lazy, Suspense } from "react";
 import PokeBG from "../assets/images/pokemonBackground.jpg";
+import PokeballLoader from "../components/Loader/PokeBallLoader";
 
 /**
  * ----------------------
@@ -30,8 +31,9 @@ function Routing() {
 	 */
 	return (
 		<div
-			className={`flex flex-col bg-cover bg-fixed bg-center h-full`}
-			style={{ backgroundImage: `url(${PokeBG})` }}
+			className={`flex flex-col pokeball-grid bg-cover`}
+			style={{ ["--cols"]: 6 }}
+			// style={{ backgroundImage: `url(${PokeBG})` }}
 		>
 			<Routes>
 				<Route path="/" element={<MainLayout />}>
@@ -39,7 +41,7 @@ function Routing() {
 					<Route
 						path="/details/:pokemon"
 						element={
-							<Suspense fallback={<div>Loading...</div>}>
+							<Suspense fallback={<PokeballLoader />}>
 								<PokeDetailsContainer />
 							</Suspense>
 						}

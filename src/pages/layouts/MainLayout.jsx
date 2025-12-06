@@ -22,8 +22,12 @@ function MainLayout() {
 	return (
 		<>
 			<div className="flex justify-end px-12 py-6">
-				<span className="cursor-pointer" onClick={goToHome}>
+				<span
+					className="cursor-pointer p-2 bg-secondary rounded-lg flex flex-col items-center"
+					onClick={goToHome}
+				>
 					<Icons iconName={"home"} />
+					<span className="text-sm font-semibold">Home</span>
 				</span>
 			</div>
 			<div className="flex flex-col gap-12 justify-center items-center">

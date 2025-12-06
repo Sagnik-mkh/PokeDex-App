@@ -6,6 +6,7 @@ import usePokeType from "../../hooks/usePokeType";
 import PokeDetails from "./PokeDetails";
 import PokeBallLoader from "../Loader/PokeBallLoader";
 import PokeEvoContainer from "../Evo/PokeEvoContainer";
+import { useEffect } from "react";
 
 function PokeDetailsContainer() {
 	/**
@@ -42,6 +43,8 @@ function PokeDetailsContainer() {
 		isError: weaknessError,
 		isSuccess: weaknessSuccess,
 	} = usePokeType(pokeDataArray?.[0]?.types);
+
+	useEffect(() => window.scroll(0, 0), [speciesData]);
 
 	if (speciesLoading || pokeLoading || weaknessLoading) {
 		return <PokeBallLoader />;

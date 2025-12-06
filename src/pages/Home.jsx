@@ -9,6 +9,7 @@ function PokeDex({ header = "PokeDex" }) {
 	 * @param {string} header - The header of the home page
 	 * @returns {JSX.Element} The home page component
 	 */
+
 	return (
 		<div className="flex flex-col justify-center items-center">
 			{/* Header */}

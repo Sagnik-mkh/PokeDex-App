@@ -18,6 +18,7 @@ export default React.memo(function PokeDetails({
 	 * @param {array} weaknessData - The data of the weakness
 	 * @returns {JSX.Element} The poke details component
 	 */
+	
 	return (
 		<>
 			<h1 className="my-12 text-4xl text-center bg-base-100">

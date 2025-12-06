@@ -6,7 +6,7 @@ import PokeCards from "./PokeCards";
 import React, { useMemo } from "react";
 import PokeCardSkeleton from "../Loader/CustomListLoader";
 import Button from "../Button/Button";
-import { useApiListUrl, useAppendedList } from "../../store";
+import { useApiListUrl, useAppendedList } from "../../zustand/store";
 
 export default React.memo(function PokemonList() {
 	/**
@@ -64,7 +64,7 @@ export default React.memo(function PokemonList() {
 				<div className="flex flex-wrap justify-around justify-items-center">
 					<PokeCards infoData={stableArray} />
 				</div>
-				<div className="grid grid-cols-4 gap-12 justify-items-center">
+				<div className="grid grid-cols-4 gap-12 justify-items-center poke-enter">
 					{skeletonArray.map((_, idx) => (
 						<PokeCardSkeleton key={idx} />
 					))}

@@ -23,7 +23,7 @@ function MainLayout() {
 		<>
 			<div className="flex justify-end px-12 py-6">
 				<span
-					className="cursor-pointer p-2 bg-secondary rounded-lg flex flex-col items-center"
+					className="flex absolute flex-col items-center p-2 rounded-lg cursor-pointer bg-secondary"
 					onClick={goToHome}
 				>
 					<Icons iconName={"home"} />

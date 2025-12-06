@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { POKEDEX_API_BASE_URL } from "./Helper/Constants";
+import { POKEDEX_API_BASE_URL } from "../Helper/Constants";
 
 export const useAppendedList = create((set) => ({
 	list: [],

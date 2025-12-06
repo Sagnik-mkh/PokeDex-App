@@ -30,7 +30,7 @@ function Routing() {
 	 */
 	return (
 		<div
-			className={`flex flex-col gap-20 bg-cover bg-fixed bg-center h-full`}
+			className={`flex flex-col bg-cover bg-fixed bg-center h-full`}
 			style={{ backgroundImage: `url(${PokeBG})` }}
 		>
 			<Routes>

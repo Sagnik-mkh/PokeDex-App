@@ -1,10 +1,11 @@
 import { POKEDEX_API_BASE_URL } from "../../Helper/Constants";
 import usePokeShortInfo from "../../hooks/usePokeShortInfo";
 import usePokeList from "../../hooks/usePokeList";
-import Pagination from "./Pagination";
+// import Pagination from "./Pagination";
 import PokeCards from "./PokeCards";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import PokeCardSkeleton from "../Loader/CustomListLoader";
+import Button from "../Button/Button";
 
 export default React.memo(function PokemonList() {
 	/**
@@ -15,6 +16,7 @@ export default React.memo(function PokemonList() {
 	 * @returns {JSX.Element} The pokemon list component
 	 */
 	const [pokeApiUrl, setApiUrl] = useState(POKEDEX_API_BASE_URL);
+	const [list, setList] = useState([]);
 
 	// Custom hook for getting list of urls
 	const {
@@ -35,21 +37,33 @@ export default React.memo(function PokemonList() {
 	} = usePokeShortInfo(listData?.urls);
 
 	// Navigate to prev page
-	function goToPrevUrl() {
-		setApiUrl(listData.prev ? listData.prev : pokeApiUrl);
-	}
+	// function goToPrevUrl() {
+	// 	setApiUrl(listData.prev ? listData.prev : pokeApiUrl);
+	// }
 
 	// Navigate to next page
 	function goToNextUrl() {
+		setList((state) => [...state, ...infoData]);
 		setApiUrl(listData.next ? listData.next : pokeApiUrl);
 	}
+
+	const stableArray = useMemo(
+		function () {
+			if (!infoData) return list;
+			return [...list, ...infoData];
+		},
+		[list, infoData]
+	);
 
 	// Custom Loader
 	if (listLoading || infoLoading || infoPending || listPending) {
 		const skeletonArray = Array.from({ length: 20 });
 		return (
 			<div className="container">
-				<div className="grid grid-cols-4 justify-items-center gap-12">
+				<div className="flex flex-wrap justify-around justify-items-center">
+					<PokeCards infoData={stableArray} />
+				</div>
+				<div className="grid grid-cols-4 gap-12 justify-items-center">
 					{skeletonArray.map((_, idx) => (
 						<PokeCardSkeleton key={idx} />
 					))}
@@ -70,12 +84,20 @@ export default React.memo(function PokemonList() {
 	if (infoSuccess && listSuccess) {
 		return (
 			<div className="container">
-				<Pagination
+				{/* <Pagination
 					goToNextUrl={goToNextUrl}
 					goToPrevUrl={goToPrevUrl}
-				/>
-				<div className="flex flex-wrap justify-items-center justify-around">
-					<PokeCards infoData={infoData} infoLoading={infoLoading} />
+				/> */}
+				<div className="flex flex-wrap justify-around justify-items-center">
+					<PokeCards infoData={stableArray} />
+				</div>
+				<div className="flex justify-center">
+					<Button
+						buttonText={"Load More..."}
+						buttonColor={"btn btn-info"}
+						buttonSize={"btn-md"}
+						onClickHandler={goToNextUrl}
+					/>
 				</div>
 			</div>
 		);

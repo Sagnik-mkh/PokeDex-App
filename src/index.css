@@ -138,3 +138,26 @@ html {
 		animation: spin-slow 1.4s linear infinite;
 	}
 }
+
+/* slide-in from left + fade */
+@keyframes slideInFromLeft {
+	0% {
+		transform: translateX(-24px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+/* base class to apply to each card */
+.poke-enter {
+	opacity: 0; /* start hidden so animation can run */
+	transform: translateX(-24px);
+	animation-name: slideInFromLeft;
+	animation-duration: 500ms;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	will-change: transform, opacity;
+}

@@ -1,10 +1,11 @@
-import { FaYoutube, FaGithub } from "react-icons/fa";
+import { FaYoutube, FaGithub, FaHome } from "react-icons/fa";
 import { GiPokecog } from "react-icons/gi";
 
 const icons = {
 	github: FaGithub,
 	youtube: FaYoutube,
-	pokemon: GiPokecog, // placeholder Pokémon icon
+	pokemon: GiPokecog,
+	home: FaHome
 };
 
 export default function Icons({ iconName, size = "2em", color = "black" }) {

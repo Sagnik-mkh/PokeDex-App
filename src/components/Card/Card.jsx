@@ -9,6 +9,8 @@ export default React.memo(function Card({
 	cardId,
 	badges,
 	onClickHandler,
+	animation,
+	animationStyle,
 }) {
 	/**
 	 * ----------------------
@@ -25,7 +27,8 @@ export default React.memo(function Card({
 	return (
 		<div
 			onClick={onClickHandler}
-			className="w-2xs h-full mb-6 text-black shadow-sm cursor-pointer card hover:poke-pop"
+			className={`mb-6 h-full text-black shadow-sm cursor-pointer w-2xs card hover:poke-pop ${animation}`}
+			style={animationStyle}
 		>
 			{/* Card image */}
 			<figure className="pt-6 bg-gray-200 rounded-md">

@@ -7,7 +7,7 @@ import axios from "axios";
  * @param {array} urls - The urls of the pokemon
  * @returns {object} The pokemon info
  */
-async function FetchAppendedInfo(urls, array = []) {
+async function FetchAppendedInfo(urls, setList) {
 	/**
 	 * ----------------------
 	 * Fetch the pokemon info
@@ -43,7 +43,9 @@ async function FetchAppendedInfo(urls, array = []) {
 			};
 		});
 
-		return [...array, ...reqPokeInfo];
+		setList((state) => [...state, ...reqPokeInfo]);
+
+		return reqPokeInfo;
 	} catch (error) {
 		// catching errors
 		console.log("Error fetching usePokeShortInfo", error);

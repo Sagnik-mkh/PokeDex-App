@@ -1,5 +1,7 @@
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 import Footer from "../../components/Footer/Footer";
+import Icons from "../../components/Icons/Icons";
+import { useCallback } from "react";
 
 function MainLayout() {
 	/**
@@ -8,14 +10,30 @@ function MainLayout() {
 	 * ----------------------
 	 * @returns {JSX.Element} The main layout component
 	 */
-	return (
-		<div className="flex flex-col justify-center items-center gap-12">
-			{/* Variable component */}
-			<Outlet />
+	const navigator = useNavigate();
 
-			{/* fixed component */}
-			<Footer />
-		</div>
+	const goToHome = useCallback(
+		function () {
+			navigator("/");
+		},
+		[navigator]
+	);
+
+	return (
+		<>
+			<div className="flex justify-end px-12 py-6">
+				<span className="cursor-pointer" onClick={goToHome}>
+					<Icons iconName={"home"} />
+				</span>
+			</div>
+			<div className="flex flex-col gap-12 justify-center items-center">
+				{/* Variable component */}
+				<Outlet />
+
+				{/* fixed component */}
+				<Footer />
+			</div>
+		</>
 	);
 }
 

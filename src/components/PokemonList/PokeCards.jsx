@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import Pokemon from "../Pokemon/Pokemon";
 
-export default React.memo(function PokeCards({ infoData, infoLoading }) {
+export default React.memo(function PokeCards({ infoData }) {
 	/**
 	 * ----------------------
 	 * Memoize Pokémon card rendering
@@ -12,18 +12,19 @@ export default React.memo(function PokeCards({ infoData, infoLoading }) {
 	 * @returns {JSX.Element} The pokemon cards component
 	 */
 	const allCards = useMemo(() => {
-		if (!infoData || infoLoading) return null;
+		if (!infoData) return null;
 
-		return infoData.map((pokemon) => (
+		return infoData.map((pokemon, idx) => (
 			<Pokemon
-				key={pokemon.name}
+				key={pokemon.id}
+				index={idx}
 				pokemonId={pokemon.id}
 				pokemonImage={pokemon.image}
 				pokemonName={pokemon.name}
 				pokemonType={pokemon.types}
 			/>
 		));
-	}, [infoData, infoLoading]);
+	}, [infoData]);
 
 	return allCards;
 });

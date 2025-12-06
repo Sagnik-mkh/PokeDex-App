@@ -31,7 +31,7 @@ function Routing() {
 	 */
 	return (
 		<div
-			className={`flex flex-col pokeball-grid bg-cover`}
+			className={`flex flex-col pokeball-grid`}
 			style={{ ["--cols"]: 6 }}
 			// style={{ backgroundImage: `url(${PokeBG})` }}
 		>

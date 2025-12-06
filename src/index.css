@@ -187,8 +187,10 @@ html {
 /* Use ::before so content stays above it; pseudo-element paints the repeating tiles */
 .pokeball-grid::before {
 	content: "";
-	position: absolute;
+	position: fixed;
 	inset: 0;
+	width: 100vw; /* cover viewport */
+	height: 100vh;
 	z-index: -1;
 	pointer-events: none;
 	opacity: var(--pokeball-opacity);

@@ -64,7 +64,7 @@ export default React.memo(function PokemonList() {
 				<div className="flex flex-wrap justify-around justify-items-center">
 					<PokeCards infoData={stableArray} />
 				</div>
-				<div className="grid grid-cols-4 gap-12 justify-items-center poke-enter">
+				<div className="grid grid-rows-4 lg:grid-cols-4 gap-12 justify-items-center poke-enter">
 					{skeletonArray.map((_, idx) => (
 						<PokeCardSkeleton key={idx} />
 					))}

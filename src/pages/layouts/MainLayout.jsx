@@ -21,14 +21,16 @@ function MainLayout() {
 
 	return (
 		<>
-			<div className="flex justify-end px-12 py-6">
-				<span
-					className="flex absolute flex-col items-center p-2 rounded-lg cursor-pointer bg-secondary"
+			<div className="flex justify-end px-12 mt-6">
+				<button
+					type="button"
+					className="btn btn-accent flex"
 					onClick={goToHome}
 				>
-					<Icons iconName={"home"} />
-					<span className="text-sm font-semibold">Home</span>
-				</span>
+					<i>
+						<Icons iconName={"home"} />
+					</i>
+				</button>
 			</div>
 			<div className="flex flex-col gap-12 justify-center items-center">
 				{/* Variable component */}
